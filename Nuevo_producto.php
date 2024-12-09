@@ -50,7 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     throw new Exception("Error al insertar el producto.");
                 }
 
-                echo "Producto nuevo agregado con éxito.";
                 $stmtInsert->close();
             }
 
@@ -87,6 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="number" name="proveedorID" placeholder="ID del Proveedor" required>
             <input type="number" name="categoriaID" placeholder="ID de la Categoría" required>
             <button type="submit">Guardar Producto</button>
+            <a href="productos.php" class="button">Productos</a>
         </form>
     </div>
 </body>
@@ -131,7 +131,24 @@ form button {
     cursor: pointer;
     font-size: 16px;
 }
+.button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+    display: block;
+    margin: 20px auto 0;
+    text-decoration: none; /* Eliminar subrayado de enlace */
+}
 
+.button:hover {
+    background-color: #45a049;
+}
 form button:hover {
     background-color: #218838;
 }

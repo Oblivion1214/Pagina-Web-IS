@@ -33,7 +33,8 @@ $result = $conn->query($sql);
             ?>
         </div>
         <a href="inicio.php" class="button">Inicio</a>
-        <a href="insertar_producto.php" class="button">Agregar producto</a>
+        <a href="insertar_producto.php" class="button">Agregar stock</a>
+        <a href="Nuevo_producto.php " class="button">Nuevo producto</a>
     </div>
 </body>
 
