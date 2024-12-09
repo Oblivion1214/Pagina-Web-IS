@@ -16,7 +16,7 @@ if ($resultProductos->num_rows > 0) {
         echo "<p>Stock: " . $row["Stock"] . "</p>";
         echo "<p>Precio: $" . $row["PrecioCliente"] . "</p>";
         echo "<p>Descripción: " . $row["Descripcion"] . "</p>";
-        echo "</div>";ughuyb
+        echo "</div>";
         echo "</div>";
     }
 } else {
