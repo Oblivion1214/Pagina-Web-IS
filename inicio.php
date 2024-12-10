@@ -22,7 +22,7 @@ include 'config.php';
                 <li><a href="clientes.php">Clientes</a></li>
                 <li><a href="proveedores.php">Proveedores</a></li>
                 <li><a href="editar_datos.php">Editar datos</a></li>
-                <li><a href="login.php">Mi cuenta (Cerrar sesión)</a></li>
+                <li><a href="logout.php">Mi cuenta (Cerrar sesión)</a></li>
             </ul>
         </nav>
     </header>

@@ -10,11 +10,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $precioProveedor = isset($_POST['precio_proveedor']) ? floatval($_POST['precio_proveedor']) : null;
     $precioCliente = isset($_POST['precio_cliente']) ? floatval($_POST['precio_cliente']) : null;
     $descripcion = isset($_POST['descripcion']) ? trim($_POST['descripcion']) : null;
-    $proveedorID = isset($_POST['proveedorID']) ? intval($_POST['proveedorID']) : null;
     $categoriaID = isset($_POST['categoriaID']) ? intval($_POST['categoriaID']) : null;
 
+    // Recuperar el proveedorID desde la sesión
+    if (isset($_SESSION['proveedorID'])) {
+        $proveedorID = $_SESSION['proveedorID'];
+    } else {
+        echo "Error: No se encontró un ID de proveedor en la sesión activa.";
+        exit();
+    }
+
     // Verificar que los campos no estén vacíos
-    if ($nombre && $imagen && $stock !== null && $precioProveedor !== null && $precioCliente !== null && $descripcion && $proveedorID && $categoriaID) {
+    if ($nombre && $imagen && $stock !== null && $precioProveedor !== null && $precioCliente !== null && $descripcion && $categoriaID) {
         // Iniciar transacción para asegurar integridad
         $conn->begin_transaction();
 
@@ -83,7 +90,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="number" step="0.01" name="precio_proveedor" placeholder="Precio del Proveedor" required>
             <input type="number" step="0.01" name="precio_cliente" placeholder="Precio al Cliente" required>
             <textarea name="descripcion" placeholder="Descripción" required></textarea>
-            <input type="number" name="proveedorID" placeholder="ID del Proveedor" required>
             <input type="number" name="categoriaID" placeholder="ID de la Categoría" required>
             <button type="submit">Guardar Producto</button>
             <a href="productos.php" class="button">Productos</a>
@@ -155,4 +161,3 @@ form button:hover {
 
 </style>
 </html>
-
