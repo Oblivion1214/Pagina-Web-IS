@@ -1,10 +1,3 @@
-<?php
-include 'config.php';
-
-$sql = "SELECT * FROM PROVEEDOR";
-$result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,101 +6,92 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Listado de Proveedores</h1>
-        
-        <div class="proveedores-lista">
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<div class='proveedor'>";
-                    echo "<h2>" . $row["Nombre"] . " " . $row["ApellidoPaterno"] . " " . $row["ApellidoMaterno"] . "</h2>";
-                    echo "<p>Teléfono: " . $row["Telefono"] . "</p>";
-                    echo "</div>";
-                }
-            } else {
-                echo "<p>No hay proveedores disponibles.</p>";
-            }
-
-            $conn->close();
-            ?>
-        </div>
+    <div class="container">    
         <a href="inicio.php" class="button">Inicio</a>
+        <a href="insertar_producto.php" class="button">Agregar stock</a>
+        <a href="Nuevo_producto.php" class="button">Nuevo producto</a>
+        <a href="logout.php" class="button logout-button">Cerrar sesión</a> <!-- Botón de cierre de sesión -->
     </div>
 </body>
 
 <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #333;
-    margin: 0;
-    padding: 0;
-    color: #fff; /* Color de texto para todo el cuerpo */
-}
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #333;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
 
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    color: #333; /* Color de texto para el contenido dentro del contenedor */
-}
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        color: #333;
+    }
 
-.button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    text-align: center;
-    display: block;
-    margin: 20px auto 0;
-    text-decoration: none; /* Eliminar subrayado de enlace */
-}
+    .button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        text-align: center;
+        display: block;
+        margin: 20px auto 0;
+        text-decoration: none;
+    }
 
-.button:hover {
-    background-color: #45a049;
-}
+    .button:hover {
+        background-color: #45a049;
+    }
 
-h1 {
-    text-align: center;
-}
+    .logout-button {
+        background-color: #f44336; /* Rojo para indicar cierre de sesión */
+    }
 
-.proveedores-lista {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
+    .logout-button:hover {
+        background-color: #d32f2f;
+    }
 
-.proveedor {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
+    h1 {
+        text-align: center;
+    }
 
-.proveedor:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+    .proveedores-lista {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
 
-.proveedor h2 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #444;
-}
+    .proveedor {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
 
-.proveedor p {
-    margin: 10px 0 0;
-    color: #666;
-}
+    .proveedor:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
+    .proveedor h2 {
+        margin: 0;
+        font-size: 1.2em;
+        color: #444;
+    }
+
+    .proveedor p {
+        margin: 10px 0 0;
+        color: #666;
+    }
 </style>
 </html>
-

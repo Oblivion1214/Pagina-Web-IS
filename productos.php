@@ -15,7 +15,6 @@
                 <li><a href="inicio.php">Inicio</a></li>
                 <li><a href="productos.php">Productos</a></li>
                 <li><a href="clientes.php">Clientes</a></li>
-                <li><a href="proveedores.php">Proveedores</a></li>
                 <li>
                     <form onsubmit="buscarProducto(event)">
                         <input type="text" id="busquedaProducto" placeholder="Buscar producto...">
