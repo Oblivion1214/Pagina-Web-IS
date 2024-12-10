@@ -222,11 +222,11 @@ CREATE TABLE `proveedor` (
   `Telefono` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-ALTER TABLE proveedores
-ADD contraseña VARCHAR(100);
+ALTER TABLE proveedor
+ADD pass VARCHAR(10);
 
-UPDATE proveedores
-SET contraseña = '123456';
+UPDATE proveedor
+SET pass = '123456';
 --
 -- Volcado de datos para la tabla `proveedor`
 --
