@@ -38,12 +38,14 @@ include 'config.php';
             <div class="about-content">
                 <h2>Sobre nosotros</h2>
                 <p>Somos una tienda especializada en la venta de Electronica de alta calidad. Ofrecemos una amplia gama de productos para todas tus necesidades.</p>
+                <p>Quieres formar parte del equipo de proveedores</p>
+                <p>Contactanos por medio del siguiente numero de contacto: 5564596842</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <?php echo date('Y'); ?> Tienda de electronicos. Todos los derechos reservados.</p>
+        <p>&copy; <?php echo date('Y'); ?> Tienda de electronicos Onlyx. Todos los derechos reservados.</p>
     </footer>
 </body>
 <style>
