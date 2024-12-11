@@ -114,7 +114,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'delete') {
             <tr>
                 <th>Producto</th>
                 <th>Cantidad</th>
-                <th>Precio</th>
+                <th>Precio(Unidad)</th>
                 <th>Subtotal</th>
                 <th>Eliminar</th>
             </tr>
@@ -124,8 +124,8 @@ if (isset($_POST['action']) && $_POST['action'] === 'delete') {
                     echo "<tr data-id='" . htmlspecialchars($item['id']) . "'>
                         <td>" . htmlspecialchars($item['nombre']) . "</td>
                         <td>" . htmlspecialchars($item['cantidad']) . "</td>
-                        <td>$" . htmlspecialchars($item['precio']) . "</td>
-                        <td>$" . htmlspecialchars($item['precio'] * $item['cantidad']) . "</td>
+                        <td>$" . htmlspecialchars($item['precio'])*1.15 . "</td>
+                        <td>$" . htmlspecialchars($item['precio']*1.15 * $item['cantidad']) . "</td>
                         <td><button class='delete-btn' onclick='deleteRow(this)'>Eliminar</button></td>
                     </tr>";
                 }

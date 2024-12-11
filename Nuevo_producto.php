@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = isset($_POST['nombre']) ? trim($_POST['nombre']) : null;
     $imagen = isset($_POST['imagen']) ? trim($_POST['imagen']) : null;
     $stock = isset($_POST['stock']) ? intval($_POST['stock']) : null;
-    $precioProveedor = isset($_POST['precio_proveedor']) ? floatval($_POST['precio_proveedor']) : null;
     $precioCliente = isset($_POST['precio_cliente']) ? floatval($_POST['precio_cliente']) : null;
     $descripcion = isset($_POST['descripcion']) ? trim($_POST['descripcion']) : null;
     $categoriaID = isset($_POST['categoriaID']) ? intval($_POST['categoriaID']) : null;
@@ -21,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Verificar que los campos no estén vacíos
-    if ($nombre && $imagen && $stock !== null && $precioProveedor !== null && $precioCliente !== null && $descripcion && $categoriaID) {
+    if ($nombre && $imagen && $stock !== null && $precioCliente !== null && $descripcion && $categoriaID) {
         // Iniciar transacción para asegurar integridad
         $conn->begin_transaction();
 
@@ -49,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmtUpdate->close();
             } else {
                 // Si no existe, insertar un nuevo producto
-                $stmtInsert = $conn->prepare("INSERT INTO productos (Nombre, Imagen, Stock, PrecioProveedor, PrecioCliente, Descripcion, ProveedorID, CategoriaID) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-                $stmtInsert->bind_param("ssiddsii", $nombre, $imagen, $stock, $precioProveedor, $precioCliente, $descripcion, $proveedorID, $categoriaID);
+                $stmtInsert = $conn->prepare("INSERT INTO productos (Nombre, Imagen, Stock, PrecioCliente, Descripcion, ProveedorID, CategoriaID) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                $stmtInsert->bind_param("ssidsii", $nombre, $imagen, $stock, $precioCliente, $descripcion, $proveedorID, $categoriaID);
                 $stmtInsert->execute();
 
                 if ($stmtInsert->affected_rows === 0) {
@@ -87,8 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" name="nombre" placeholder="Nombre del Producto" required>
             <input type="text" name="imagen" placeholder="URL de la Imagen" required>
             <input type="number" name="stock" placeholder="Stock" required>
-            <input type="number" step="0.01" name="precio_proveedor" placeholder="Precio del Proveedor" required>
-            <input type="number" step="0.01" name="precio_cliente" placeholder="Precio al Cliente" required>
+            <input type="number" step="0.01" name="precio_cliente" placeholder="Precio de proveedor" required>
             <textarea name="descripcion" placeholder="Descripción" required></textarea>
             <input type="number" name="categoriaID" placeholder="ID de la Categoría" required>
             <button type="submit">Guardar Producto</button>

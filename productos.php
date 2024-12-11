@@ -55,7 +55,7 @@
                 echo "<img src='" . $row["Imagen"] . "' alt='" . $row["Nombre"] . "'>";
                 echo "<h3>" . $row["Nombre"] . "</h3>";
                 echo "<p>Stock: " . $row["Stock"] . "</p>";
-                echo "<p>Precio: $" . $row["PrecioCliente"] . "</p>";
+                echo "<p>Precio: $" . $row["PrecioCliente"]*1.15 . "</p>";
                 echo "<p>Descripción: " . $row["Descripcion"] . "</p>";
                 echo "<button onclick=\"verDetalles(" . $row['ProductoID'] . ")\">Ver detalles</button>";
                 echo "</div>";

@@ -97,7 +97,7 @@ if (isset($_GET['id'])) {
             <img src="<?php echo $row['Imagen']; ?>" alt="<?php echo $row['Nombre']; ?>">
             <h3><?php echo $row['Nombre']; ?></h3>
             <p>Stock: <?php echo $row['Stock']; ?></p>
-            <p>Precio: $<?php echo $row['PrecioCliente']; ?></p>
+            <p>Precio: $<?php echo $row['PrecioCliente']*1.15; ?></p>
             <p>Descripción: <?php echo $row['Descripcion']; ?></p>
         </div>
         <a href="javascript:history.back()" class="back-button">Volver a Productos</a>
