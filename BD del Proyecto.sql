@@ -1,12 +1,13 @@
 --
 -- Base de datos: `proyecto`
 --
-
+DROP DATABASE PROYECTO;
 -- --------------------------------------------------------
-
+CREATE DATABASE PROYECTO;
 --
 -- Estructura de tabla para la tabla `carrito`
 --
+USE PROYECTO;
 
 CREATE TABLE `carrito` (
   `CarritoID` int(11) NOT NULL,
@@ -186,7 +187,6 @@ CREATE TABLE `productos` (
   `Nombre` varchar(60) DEFAULT NULL,
   `Imagen` varchar(200) DEFAULT NULL,
   `Stock` int(11) DEFAULT NULL,
-  `PrecioProveedor` decimal(10,2) DEFAULT NULL,
   `PrecioCliente` decimal(10,2) DEFAULT NULL,
   `Descripcion` varchar(60) DEFAULT NULL,
   `ProveedorID` int(11) DEFAULT NULL,
@@ -197,22 +197,22 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`ProductoID`, `Nombre`, `Imagen`, `Stock`, `PrecioProveedor`, `PrecioCliente`, `Descripcion`, `ProveedorID`, `CategoriaID`) VALUES
-(1, 'Echo Dot', 'https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/407823-smart-speakers-amazon-echo-dot-5th-gen-w-clock-10033746.png', 30, 500.00, 1100.00, 'Un dispositivo completo. Amazon Echo de 4 generación combina', 1, 3),
-(2, 'Macbook Air M3', 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba13-spacegray-config-202402?wid=820&hei=498&fmt=jpeg&qlt=90&.v=1708371033138', 10, 15000.00, 20000.99, 'MacBook Air de 13 pulgadas. Superligera. Superchip M3. El ch', 2, 2),
-(3, 'Samsung Galaxy S23', 'https://m.media-amazon.com/images/I/61IGmT5b35L._AC_UF894,1000_QL80_.jpg', 5, 10000.00, 15000.00, 'Galaxy S23 Ultra establece un nuevo estándar ÉPICO en cuanto', 3, 1),
-(4, 'iPad Pro', 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-12-select-202104?wid=470&hei=556&fmt=png-alpha&.v=1617067388000', 8, 12000.00, 15000.00, 'iPad Pro con pantalla Liquid Retina XDR de 12,9 pulgadas.', 2, 4),
-(5, 'AirPods Pro', 'https://www.apple.com/v/airpods-pro/m/images/meta/og__eui2mpgzwyaa_overview.png', 50, 2000.00, 3500.00, 'Auriculares inalámbricos con cancelación de ruido activa.', 2, 5),
-(6, 'Bose SoundLink Revolve', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Vua8juivpEFfyXVZKrRqTcWLxMc1zPQViw&s', 15, 4000.00, 6000.00, 'Altavoz Bluetooth portátil con sonido envolvente de 360 grados.', 3, 6),
-(7, 'Canon EOS R5', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfMfdgWdNG9ZAZyym4l4qZLIMERjMpdhFzfg&s', 3, 30000.00, 35000.00, 'Cámara sin espejo con sensor CMOS de 45 MP y grabación de vídeo 8K.', 4, 7),
-(8, 'Nintendo Switch', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8ghgNGvHFhEJ9dkZetdrI5AKKiTk13vEHHQ&s', 20, 7000.00, 9000.00, 'Consola de videojuegos híbrida con controles Joy-Con.', 5, 8),
-(9, 'Microsoft Office 365', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3wr6lXJVHlrlJNfws4shgK4O5vkBoUbe0wQ&s', 100, 500.00, 1000.00, 'Suite de aplicaciones de productividad y colaboración.', 6, 9),
-(10, 'LG OLED CX', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjzGJFPMcDwbDMtFzUC2H17PK0ViYOske70A&s', 5, 20000.00, 25000.00, 'Televisor OLED de 55 pulgadas con AI ThinQ.', 7, 10),
-(11, 'DJI Mavic Air 2', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzAZP2pBr6JsKaXSoGYu0O8q6hdjiUCWZfWA&s', 4, 15000.00, 18000.00, 'Drone compacto con cámara 4K y autonomía de vuelo de 34 minutos.', 8, 11),
-(12, 'Google Nest Hub', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd7M-NHLVL_Im-j36OsOQkyMmXtMgOjQHeFA&s', 10, 2500.00, 4000.00, 'Pantalla inteligente con el Asistente de Google integrado.', 9, 12),
-(13, 'Fitbit Charge 5', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO3DzYXuMrmBfpCBGGjfwLCenTyoeD_JP2pA&s', 30, 1500.00, 2800.00, 'Pulsera de actividad física con GPS integrado y monitor de salud.', 10, 13),
-(14, 'HP LaserJet Pro MFP', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUtXWl1e6qj8dye-wVJ-C_ZC61OmO3plvNyQ&s', 5, 5000.00, 7500.00, 'Impresora multifunción láser con capacidades de escaneo y copia.', 11, 14),
-(15, 'NVIDIA GeForce RTX 3080', 'https://m.media-amazon.com/images/I/61juKdIql1L.jpg', 7, 25000.00, 30000.00, 'Tarjeta gráfica de alta gama para juegos y renderizado.', 12, 15);
+INSERT INTO `productos` (`ProductoID`, `Nombre`, `Imagen`, `Stock`, `PrecioCliente`, `Descripcion`, `ProveedorID`, `CategoriaID`) VALUES
+(1, 'Echo Dot', 'https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/407823-smart-speakers-amazon-echo-dot-5th-gen-w-clock-10033746.png', 30, 1100.00, 'Un dispositivo completo. Amazon Echo de 4 generación combina', 1, 3),
+(2, 'Macbook Air M3', 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba13-spacegray-config-202402?wid=820&hei=498&fmt=jpeg&qlt=90&.v=1708371033138', 10, 20000.99, 'MacBook Air de 13 pulgadas. Superligera. Superchip M3. El ch', 2, 2),
+(3, 'Samsung Galaxy S23', 'https://m.media-amazon.com/images/I/61IGmT5b35L._AC_UF894,1000_QL80_.jpg', 5, 15000.00, 'Galaxy S23 Ultra establece un nuevo estándar ÉPICO en cuanto', 3, 1),
+(4, 'iPad Pro', 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-12-select-202104?wid=470&hei=556&fmt=png-alpha&.v=1617067388000', 8, 15000.00, 'iPad Pro con pantalla Liquid Retina XDR de 12,9 pulgadas.', 2, 4),
+(5, 'AirPods Pro', 'https://www.apple.com/v/airpods-pro/m/images/meta/og__eui2mpgzwyaa_overview.png', 50, 3500.00, 'Auriculares inalámbricos con cancelación de ruido activa.', 2, 5),
+(6, 'Bose SoundLink Revolve', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Vua8juivpEFfyXVZKrRqTcWLxMc1zPQViw&s', 15, 6000.00, 'Altavoz Bluetooth portátil con sonido envolvente de 360 grados.', 3, 6),
+(7, 'Canon EOS R5', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfMfdgWdNG9ZAZyym4l4qZLIMERjMpdhFzfg&s', 3, 35000.00, 'Cámara sin espejo con sensor CMOS de 45 MP y grabación de vídeo 8K.', 4, 7),
+(8, 'Nintendo Switch', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8ghgNGvHFhEJ9dkZetdrI5AKKiTk13vEHHQ&s', 20, 9000.00, 'Consola de videojuegos híbrida con controles Joy-Con.', 5, 8),
+(9, 'Microsoft Office 365', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3wr6lXJVHlrlJNfws4shgK4O5vkBoUbe0wQ&s', 100, 1000.00, 'Suite de aplicaciones de productividad y colaboración.', 6, 9),
+(10, 'LG OLED CX', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjzGJFPMcDwbDMtFzUC2H17PK0ViYOske70A&s', 5, 25000.00, 'Televisor OLED de 55 pulgadas con AI ThinQ.', 7, 10),
+(11, 'DJI Mavic Air 2', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzAZP2pBr6JsKaXSoGYu0O8q6hdjiUCWZfWA&s', 4, 18000.00, 'Drone compacto con cámara 4K y autonomía de vuelo de 34 minutos.', 8, 11),
+(12, 'Google Nest Hub', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd7M-NHLVL_Im-j36OsOQkyMmXtMgOjQHeFA&s', 10, 4000.00, 'Pantalla inteligente con el Asistente de Google integrado.', 9, 12),
+(13, 'Fitbit Charge 5', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO3DzYXuMrmBfpCBGGjfwLCenTyoeD_JP2pA&s', 30, 2800.00, 'Pulsera de actividad física con GPS integrado y monitor de salud.', 10, 13),
+(14, 'HP LaserJet Pro MFP', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUtXWl1e6qj8dye-wVJ-C_ZC61OmO3plvNyQ&s', 5, 7500.00, 'Impresora multifunción láser con capacidades de escaneo y copia.', 11, 14),
+(15, 'NVIDIA GeForce RTX 3080', 'https://m.media-amazon.com/images/I/61juKdIql1L.jpg', 7, 30000.00, 'Tarjeta gráfica de alta gama para juegos y renderizado.', 12, 15);
 
 -- --------------------------------------------------------
 
@@ -374,7 +374,7 @@ ALTER TABLE `pedidos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`ProductoID`),
-  ADD KEY `NN` (`Nombre`,`Stock`,`PrecioProveedor`,`PrecioCliente`,`Descripcion`),
+  ADD KEY `NN` (`Nombre`,`Stock`,`PrecioCliente`,`Descripcion`),
   ADD KEY `FK_CategoriaID` (`CategoriaID`),
   ADD KEY `FK_ProveedorID` (`ProveedorID`);
 
