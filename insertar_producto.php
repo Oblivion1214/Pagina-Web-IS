@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
 
         <!-- Botón para regresar al inicio debajo del formulario -->
-        <a href="inicio.php">
+        <a href="proveedores.php">
             <button class="return-btn">Volver al inicio</button>
         </a>
     </div>

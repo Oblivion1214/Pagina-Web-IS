@@ -92,8 +92,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <textarea name="descripcion" placeholder="Descripción" required></textarea>
             <input type="number" name="categoriaID" placeholder="ID de la Categoría" required>
             <button type="submit">Guardar Producto</button>
-            <a href="productos.php" class="button">Productos</a>
         </form>
+        <!-- Botón para regresar al inicio debajo del formulario -->
+            <a href="proveedores.php">
+                <button class="return-btn">Volver al inicio</button>
+            </a>
     </div>
 </body>
 <style>

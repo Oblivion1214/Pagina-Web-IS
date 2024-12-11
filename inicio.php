@@ -19,8 +19,6 @@ include 'config.php';
             <ul class="menu">
                 <li><a href="inicio.php">Inicio</a></li>
                 <li><a href="productos.php">Productos</a></li>
-                <li><a href="clientes.php">Clientes</a></li>
-                <li><a href="proveedores.php">Proveedores</a></li>
                 <li><a href="editar_datos.php">Editar datos</a></li>
                 <li><a href="logout.php">Mi cuenta (Cerrar sesión)</a></li>
             </ul>

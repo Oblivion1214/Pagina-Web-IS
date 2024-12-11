@@ -7,10 +7,9 @@
 </head>
 <body>
     <div class="container">    
-        <a href="inicio.php" class="button">Inicio</a>
         <a href="insertar_producto.php" class="button">Agregar stock</a>
         <a href="Nuevo_producto.php" class="button">Nuevo producto</a>
-        <a href="logout.php" class="button logout-button">Cerrar sesión</a> <!-- Botón de cierre de sesión -->
+        <a href="logout_proveedor.php" class="button logout-button">Cerrar sesión</a> <!-- Botón de cierre de sesión -->
     </div>
 </body>
 

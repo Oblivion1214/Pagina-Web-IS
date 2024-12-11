@@ -1,22 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 06-12-2024 a las 15:21:37
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Base de datos: `proyecto`
 --
@@ -55,8 +36,21 @@ CREATE TABLE `categorias` (
 
 INSERT INTO `categorias` (`CategoriaID`, `Nombre`, `Descripcion`) VALUES
 (1, 'Celulares', 'Telefonos celulares'),
-(3, 'Electronica', 'Componentes electronicos'),
-(2, 'Laptops', 'Computadoras tipo laptop');
+(2, 'Electronica', 'Componentes electronicos'),
+(3, 'Laptops', 'Computadoras tipo laptop'),
+(4, 'Tabletas', 'Dispositivos tipo tablet'),
+(5, 'Accesorios', 'Accesorios para dispositivos electrónicos'),
+(6, 'Audio', 'Audífonos y altavoces'),
+(7, 'Cámaras', 'Cámaras fotográficas y de video'),
+(8, 'Gaming', 'Consolas y accesorios para videojuegos'),
+(9, 'Software', 'Programas y aplicaciones'),
+(10, 'Televisores', 'Televisores y sistemas de entretenimiento'),
+(11, 'Drones', 'Drones y accesorios relacionados'),
+(12, 'Smart Home', 'Dispositivos inteligentes para el hogar'),
+(13, 'Wearables', 'Dispositivos portátiles como smartwatches'),
+(14, 'Impresoras', 'Impresoras y escáneres'),
+(15, 'Componentes de PC', 'Partes y componentes para computadoras de escritorio');
+
 
 -- --------------------------------------------------------
 
@@ -206,7 +200,19 @@ CREATE TABLE `productos` (
 INSERT INTO `productos` (`ProductoID`, `Nombre`, `Imagen`, `Stock`, `PrecioProveedor`, `PrecioCliente`, `Descripcion`, `ProveedorID`, `CategoriaID`) VALUES
 (1, 'Echo Dot', 'https://crdms.images.consumerreports.org/f_auto,w_600/prod/products/cr/models/407823-smart-speakers-amazon-echo-dot-5th-gen-w-clock-10033746.png', 30, 500.00, 1100.00, 'Un dispositivo completo. Amazon Echo de 4 generación combina', 1, 3),
 (2, 'Macbook Air M3', 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba13-spacegray-config-202402?wid=820&hei=498&fmt=jpeg&qlt=90&.v=1708371033138', 10, 15000.00, 20000.99, 'MacBook Air de 13 pulgadas. Superligera. Superchip M3. El ch', 2, 2),
-(3, 'Samsung Galaxy S23', 'https://m.media-amazon.com/images/I/61IGmT5b35L._AC_UF894,1000_QL80_.jpg', 5, 10000.00, 15000.00, 'Galaxy S23 Ultra establece un nuevo estándar ÉPICO en cuanto', 3, 1);
+(3, 'Samsung Galaxy S23', 'https://m.media-amazon.com/images/I/61IGmT5b35L._AC_UF894,1000_QL80_.jpg', 5, 10000.00, 15000.00, 'Galaxy S23 Ultra establece un nuevo estándar ÉPICO en cuanto', 3, 1),
+(4, 'iPad Pro', 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-12-select-202104?wid=470&hei=556&fmt=png-alpha&.v=1617067388000', 8, 12000.00, 15000.00, 'iPad Pro con pantalla Liquid Retina XDR de 12,9 pulgadas.', 2, 4),
+(5, 'AirPods Pro', 'https://www.apple.com/v/airpods-pro/m/images/meta/og__eui2mpgzwyaa_overview.png', 50, 2000.00, 3500.00, 'Auriculares inalámbricos con cancelación de ruido activa.', 2, 5),
+(6, 'Bose SoundLink Revolve', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Vua8juivpEFfyXVZKrRqTcWLxMc1zPQViw&s', 15, 4000.00, 6000.00, 'Altavoz Bluetooth portátil con sonido envolvente de 360 grados.', 3, 6),
+(7, 'Canon EOS R5', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfMfdgWdNG9ZAZyym4l4qZLIMERjMpdhFzfg&s', 3, 30000.00, 35000.00, 'Cámara sin espejo con sensor CMOS de 45 MP y grabación de vídeo 8K.', 4, 7),
+(8, 'Nintendo Switch', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8ghgNGvHFhEJ9dkZetdrI5AKKiTk13vEHHQ&s', 20, 7000.00, 9000.00, 'Consola de videojuegos híbrida con controles Joy-Con.', 5, 8),
+(9, 'Microsoft Office 365', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3wr6lXJVHlrlJNfws4shgK4O5vkBoUbe0wQ&s', 100, 500.00, 1000.00, 'Suite de aplicaciones de productividad y colaboración.', 6, 9),
+(10, 'LG OLED CX', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjzGJFPMcDwbDMtFzUC2H17PK0ViYOske70A&s', 5, 20000.00, 25000.00, 'Televisor OLED de 55 pulgadas con AI ThinQ.', 7, 10),
+(11, 'DJI Mavic Air 2', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzAZP2pBr6JsKaXSoGYu0O8q6hdjiUCWZfWA&s', 4, 15000.00, 18000.00, 'Drone compacto con cámara 4K y autonomía de vuelo de 34 minutos.', 8, 11),
+(12, 'Google Nest Hub', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd7M-NHLVL_Im-j36OsOQkyMmXtMgOjQHeFA&s', 10, 2500.00, 4000.00, 'Pantalla inteligente con el Asistente de Google integrado.', 9, 12),
+(13, 'Fitbit Charge 5', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO3DzYXuMrmBfpCBGGjfwLCenTyoeD_JP2pA&s', 30, 1500.00, 2800.00, 'Pulsera de actividad física con GPS integrado y monitor de salud.', 10, 13),
+(14, 'HP LaserJet Pro MFP', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUtXWl1e6qj8dye-wVJ-C_ZC61OmO3plvNyQ&s', 5, 5000.00, 7500.00, 'Impresora multifunción láser con capacidades de escaneo y copia.', 11, 14),
+(15, 'NVIDIA GeForce RTX 3080', 'https://m.media-amazon.com/images/I/61juKdIql1L.jpg', 7, 25000.00, 30000.00, 'Tarjeta gráfica de alta gama para juegos y renderizado.', 12, 15);
 
 -- --------------------------------------------------------
 
@@ -231,27 +237,27 @@ SET pass = '123456';
 -- Volcado de datos para la tabla `proveedor`
 --
 
-INSERT INTO `proveedor` (`ProveedorID`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, `Telefono`) VALUES
-(1, 'Juan', 'Perez', 'Lopez', '5512345678'),
-(2, 'Maria', 'Gonzalez', 'Martinez', '5523456789'),
-(3, 'Carlos', 'Rodriguez', 'Garcia', '5534567890'),
-(4, 'Ana', 'Fernandez', 'Gomez', '5545678901'),
-(5, 'Pedro', 'Ruiz', 'Guerrero', '5556789012'),
-(6, 'Carmen', 'Torres', 'Santos', '5567890123'),
-(7, 'Ricardo', 'Ramirez', 'Reyes', '5578901234'),
-(8, 'Isabel', 'Mendoza', 'Aguilar', '5589012345'),
-(9, 'Luis', 'Castro', 'Romero', '5590123456'),
-(10, 'Patricia', 'Vargas', 'Guerra', '5601234567'),
-(11, 'Francisco', 'Ramos', 'Caballero', '5612345678'),
-(12, 'Laura', 'Guerrero', 'Peña', '5623456789'),
-(13, 'Javier', 'Morales', 'Cortes', '5634567890'),
-(14, 'Teresa', 'Delgado', 'Rojas', '5645678901'),
-(15, 'Jose Antonio', 'Paredes', 'Bautista', '5656789012'),
-(16, 'Sofia', 'Campos', 'Navarro', '5667890123'),
-(17, 'David', 'Cordero', 'Mendez', '5678901234'),
-(18, 'Lucia', 'Aguirre', 'Barajas', '5689012345'),
-(19, 'Daniel', 'Vega', 'Molina', '5690123456'),
-(20, 'Rosa Maria', 'Rangel', 'Del Bosque', '5701234567');
+INSERT INTO `proveedor` (`ProveedorID`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, `Telefono`, `pass`) VALUES
+(1, 'Juan', 'Perez', 'Lopez', '5512345678','123'),
+(2, 'Maria', 'Gonzalez', 'Martinez', '5523456789','123'),
+(3, 'Carlos', 'Rodriguez', 'Garcia', '5534567890','123'),
+(4, 'Ana', 'Fernandez', 'Gomez', '5545678901','123'),
+(5, 'Pedro', 'Ruiz', 'Guerrero', '5556789012','123'),
+(6, 'Carmen', 'Torres', 'Santos', '5567890123','123'),
+(7, 'Ricardo', 'Ramirez', 'Reyes', '5578901234','123'),
+(8, 'Isabel', 'Mendoza', 'Aguilar', '5589012345','123'),
+(9, 'Luis', 'Castro', 'Romero', '5590123456','123'),
+(10, 'Patricia', 'Vargas', 'Guerra', '5601234567','123'),
+(11, 'Francisco', 'Ramos', 'Caballero', '5612345678','123'),
+(12, 'Laura', 'Guerrero', 'Peña', '5623456789','123'),
+(13, 'Javier', 'Morales', 'Cortes', '5634567890','123'),
+(14, 'Teresa', 'Delgado', 'Rojas', '5645678901','123'),
+(15, 'Jose Antonio', 'Paredes', 'Bautista', '5656789012','123'),
+(16, 'Sofia', 'Campos', 'Navarro', '5667890123','123'),
+(17, 'David', 'Cordero', 'Mendez', '5678901234','123'),
+(18, 'Lucia', 'Aguirre', 'Barajas', '5689012345','123'),
+(19, 'Daniel', 'Vega', 'Molina', '5690123456','123'),
+(20, 'Rosa Maria', 'Rangel', 'Del Bosque', '5701234567','123');
 
 -- --------------------------------------------------------
 
@@ -545,7 +551,3 @@ ALTER TABLE `productos`
 ALTER TABLE `tarjetas`
   ADD CONSTRAINT `FK_ClienteIDTarjeta` FOREIGN KEY (`ClienteID`) REFERENCES `clientes` (`ClienteID`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

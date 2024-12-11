@@ -13,8 +13,6 @@
         <nav class="navbar">
             <ul class="menu">
                 <li><a href="inicio.php">Inicio</a></li>
-                <li><a href="productos.php">Productos</a></li>
-                <li><a href="clientes.php">Clientes</a></li>
                 <li>
                     <form onsubmit="buscarProducto(event)">
                         <input type="text" id="busquedaProducto" placeholder="Buscar producto...">
@@ -34,7 +32,7 @@
     <h1>Productos</h1>
 
     <div class="filters">
-        <label for="precioFiltro">Filtrar por Precio:</label>
+        <label for="precioFiltro">Filtrar por Precio (Precio Maximo):</label>
         <input type="number" id="precioFiltro" placeholder="Precio">
         <button onclick="filtrarPorPrecio()">Filtrar</button>
         <label for="nombreFiltro">Ordenar por Nombre:</label>
